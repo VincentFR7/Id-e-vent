@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Événements - CloneWars</title>
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #0f172a, #0b2545);
+  color: #e6eef6;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+header h1 { margin: 0; font-size: 24px; }
+.search-box input {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.1);
+  color: #fff;
+}
+.wrap {
+  padding: 20px 40px;
+}
+.event-card {
+  background: rgba(255,255,255,0.05);
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  transition: transform 0.2s;
+}
+.event-card:hover { transform: translateY(-3px); }
+.event-card a { color: #6ee7b7; text-decoration: none; }
+.event-card a:hover { text-decoration: underline; }
+.event-title { font-weight: 600; font-size: 18px; margin: 0 0 6px 0; }
+.event-meta { font-size: 14px; color: #9aa4b2; margin-bottom: 6px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Événements CloneWars</h1>
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Rechercher...">
+  </div>
+</header>
+
+<div class="wrap" id="eventsList">
+
+  <!-- Exemple d'événement : copie ce bloc pour ajouter un nouvel événement -->
+  <div class="event-card">
+    <div class="event-title">Bombe sur Coruscant</div>
+    <div class="event-meta">Map : Coruscant</div>
+    <a href="https://docs.google.com/document/d/1t4co4XNFGjVp5tXxi5bGLXSG4RqfCfxQxr3F3oWE-18/edit?usp=sharing" target="_blank">Lien vers le document</a>
+  </div>
+
+  <div class="event-card">
+    <div class="event-title">Invasion sur Kashyyyk</div>
+    <div class="event-meta">Map : Kashyyyk</div>
+    <a href="https://docs.google.com/document/d/1XL6xuf6DoBW8RRcfFVI76YKeLEPxiI-Yb4Z_VcjWL7c/edit?usp=sharing" target="_blank">Lien vers le document</a>
+  </div>
+
+  <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+    <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+    <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+    <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+    <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+    <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+    <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+    <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+    <div class="event-card">
+    <div class="event-title">En cours de rédaction</div>
+    <div class="event-meta">Map : ......</div>
+    <a href="https://www.google.com" target="_blank">Lien vers le document</a>
+  </div>
+
+</div>
+
+<script>
+// Recherche simple
+const searchInput = document.getElementById('searchInput');
+const events = document.querySelectorAll('.event-card');
+
+searchInput.addEventListener('input', () => {
+  const term = searchInput.value.toLowerCase();
+  events.forEach(event => {
+    const title = event.querySelector('.event-title').textContent.toLowerCase();
+    const map = event.querySelector('.event-meta').textContent.toLowerCase();
+    if(title.includes(term) || map.includes(term)) {
+      event.style.display = 'block';
+    } else {
+      event.style.display = 'none';
+    }
+  });
+});
+</script>
+
+</body>
+</html>
+
+  <script>
+    // Dissuasion 
+    document.addEventListener('contextmenu', e => e.preventDefault());
+    document.addEventListener('keydown', function(e){
+      if(e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key.toUpperCase() === 'I') || (e.ctrlKey && e.key.toUpperCase() === 'U') || (e.ctrlKey && e.key.toUpperCase() === 'S')){
+        e.preventDefault();
+        alert('Accès restreint mon ptit lou ;)');
+      }
+    });
+
+    // Lightbox
+    const galleryItems = document.querySelectorAll('.gallery-item img');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    galleryItems.forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightbox.style.display = 'flex';
+      });
+    });
+
+    lightbox.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+    });
+  </script>
+</body>
+</html>
